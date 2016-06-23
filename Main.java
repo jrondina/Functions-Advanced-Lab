@@ -72,11 +72,11 @@ public class Main {
 
     public static void everyOtherLetter(String inputString) {
         StringBuilder newString = new StringBuilder(inputString);
-        int newLength = newString.length();
-        for(int i = 0; i < newLength; i++) {
+        int offset = 0;
+        for(int i = 0; i < newString.length(); i++) {
             if (i % 2 != 0) {
-                newString.deleteCharAt(i);
-                newLength--;
+                newString.deleteCharAt(i - offset);
+                offset++;
 
             }
 
